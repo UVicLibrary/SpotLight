@@ -9,6 +9,8 @@ spotlight/*
 spotlight/public/uploads/
 spotlight/tmp/
 spotlight/log
+bundler/gems/spotlight-5e29a08dd44a/
+
 
 !bundler/
 !bundler/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*

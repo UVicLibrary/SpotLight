@@ -1,5 +1,6 @@
-<% # main container for facets/limits menu -%>
-<% if has_facet_values?  %>
+<% # main container for facets/limits menu 
+-%>
+<% if request.path.include? "catalog" %>
 <div id="facets" class="facets sidenav">
 
   <div class="top-panel-heading panel-heading">
@@ -17,6 +18,9 @@
     </div>
 
   <div id="facet-panel-collapse" class="collapse panel-group">
+  <% @display_facets.each do |f| %>
+	  <%= render_facet_limit(f) %>
+  <% end %>
   <%= render_facet_partials %>
 </div>
 </div>

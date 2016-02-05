@@ -19,6 +19,7 @@ module Blacklight::FacetsHelperBehavior
   # @param [Hash] options
   # @return String
   def render_facet_partials fields = facet_field_names, options = {}
+  	  #byebug
     safe_join(facets_from_request(fields).map do |display_facet|
       render_facet_limit(display_facet, options)
     end.compact, "\n")

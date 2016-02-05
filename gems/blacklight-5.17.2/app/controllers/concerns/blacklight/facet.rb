@@ -13,7 +13,10 @@ module Blacklight
     end
 
     def facets_from_request(fields = facet_field_names)
-      fields.map { |field| facet_by_field_name(field) }.compact
+      fields.map do |field| 
+      	  #byebug
+      	  facet_by_field_name(field) 
+      end.compact
     end
 
     def facet_field_names
@@ -28,6 +31,7 @@ module Blacklight
 
     # Get a FacetField object from the @response
     def facet_by_field_name(field_or_field_name)
+    	#byebug
       case field_or_field_name
       when String, Symbol, Blacklight::Configuration::FacetField
         facet_field = facet_configuration_for_field(field_or_field_name)

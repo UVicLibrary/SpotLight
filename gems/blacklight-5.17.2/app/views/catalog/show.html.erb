@@ -1,5 +1,9 @@
 <div id="content" class="<%= show_content_classes %>">
+	<p>blacklight-catalog-show</p>
   <%= render_document_main_content_partial %>
+  
+  <%= render :partial => "spotlight/shared/hidden_fields" %>
+  <dt>Access and Use Rights: </dt><dd>Rights info goes here</dd>
 </div>
 
 <div id="sidebar" class="<%= show_sidebar_classes %>">

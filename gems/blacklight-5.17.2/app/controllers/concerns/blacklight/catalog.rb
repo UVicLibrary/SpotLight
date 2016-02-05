@@ -50,7 +50,12 @@ module Blacklight::Catalog
     # get search results from the solr index
     def index
       (@response, @document_list) = search_results(params, search_params_logic)
-
+      @display_facets = []
+      blacklight_config.facet_fields.each do |f|
+      	  next if f.first == "exhibit_tags" || f.first == "exhibit_visibility"
+      	  @fresponse = get_facet_field_response(f.first)
+      	  @display_facets.push(@fresponse.aggregations[f.first])
+      end
       respond_to do |format|
         format.html { store_preferred_view }
         format.rss  { render :layout => false }

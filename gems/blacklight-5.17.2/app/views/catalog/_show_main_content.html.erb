@@ -5,6 +5,7 @@
 
 <div id="document" class="document <%= render_document_class %>" itemscope  itemtype="<%= @document.itemtype %>">
   <div id="doc_<%= @document.id.to_s.parameterize %>">
+  	<p>blacklight-catalog-show_main_content</p>
     <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
   </div>
 </div>

@@ -27,9 +27,15 @@ class CatalogController < ApplicationController
     config.index.title_field = 'full_title_tesim'
     
     config.add_search_field 'all_fields', label: 'Everything'
+    config.add_search_field 'spotlight_upload_description_tesim', label: 'Description'
 
     config.add_sort_field 'relevance', sort: 'score desc', label: 'Relevance'
+    config.add_sort_field 'timestamp', sort: 'timestamp desc', label: 'Date Modified'
 
     config.add_field_configuration_to_solr_request!
+    
+    config.add_facet_field 'spotlight_upload_consolesave_tesim', :label => 'Console', :limit => 10
+    config.add_facet_field 'spotlight_upload_date_tesim', :label => 'Upload Date', :limit => 10
+    
   end
 end

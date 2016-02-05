@@ -21,9 +21,11 @@ module Blacklight::RenderPartialsHelper
   # @param [SolrDocument]
   # @return [String]
   def render_document_partials(doc, partials = [], locals ={})
-    safe_join(partials.map do |action_name|
-      render_document_partial(doc, action_name, locals)
-    end, "\n")
+    safe_join(
+    	partials.map do |action_name|
+		  render_document_partial(doc, action_name, locals)
+		end, 
+    "\n")
   end
 
   ##
@@ -39,6 +41,7 @@ module Blacklight::RenderPartialsHelper
   # @param [String] base name for the partial
   # @param [Hash] locales to pass through to the partials
   def render_document_partial(doc, base_name, locals = {})
+  	  #byebug
     format = if method(:document_partial_name).arity == 1
       Deprecation.warn self, "The #document_partial_name with a single argument is deprecated. Update your override to include a second argument for the 'base name'"
       document_partial_name(doc)
@@ -51,6 +54,15 @@ module Blacklight::RenderPartialsHelper
       find_document_show_template_with_view(view_type, base_name, format, locals)
     end
     if template
+	  #image_formats = [".jpg", ".jpeg", ".tif", ".png", ".jp2"]
+	  video_formats = [".mp4", ".avi"]
+	  audio_formats = [".mp3", ".ogg"]
+	  ext = File.extname(doc._source["full_image_url_ssm"][0])
+	  if video_formats.include? ext
+	  	  template.sub! 'openseadragon', 'video'
+	  elsif audio_formats.include? ext
+	  	  template.sub! 'openseadragon', 'audio'
+	  end
       template.render(self, locals.merge(document: doc))
     else
       ''

@@ -61,6 +61,7 @@
 
     <dynamicField name="*_bs" type="boolean" stored="true" indexed="false" multiValued="false"/>
     <dynamicField name="*_bsi" type="boolean" stored="true" indexed="true" multiValued="false"/>
+    <dynamicField name="*_bsim" type="boolean" stored="true" indexed="true" multiValued="true"/>
 
     <dynamicField name="*_lls" type="location" stored="true" indexed="false" multiValued="false"/>
     <dynamicField name="*_llsm" type="location" stored="true" indexed="false" multiValued="true"/>

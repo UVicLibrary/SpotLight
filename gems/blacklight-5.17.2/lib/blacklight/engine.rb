@@ -46,7 +46,8 @@ module Blacklight
       'Sprint' => 'messaging.sprintpcs.com',
       'T Mobile' => 'tmomail.net',
       'Alltel' => 'message.alltel.com',
-      'Cricket' => 'mms.mycricket.com'
+      'Cricket' => 'mms.mycricket.com',
+      'Koodo' => 'sp.koodo.com'
     }
 
   end
