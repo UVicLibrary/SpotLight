@@ -3,7 +3,7 @@ cache/
 doc/
 extensions/
 specifications/
-bundler/*
+
 gems/*
 spotlight/*
 spotlight/public/uploads/
@@ -11,9 +11,10 @@ spotlight/tmp/
 spotlight/log
 bundler/gems/spotlight-5e29a08dd44a/
 
-
 !bundler/
-!bundler/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+!bundler/gems/
+!bundler/gems/spotlight-4a916cf7283c/
+!bundler/gems/spotlight-4a916cf7283c/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
 !gems/
 !gems/blacklight-5.17.2/
 !gems/blacklight-5.17.2/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
